@@ -4,9 +4,9 @@
 
 Certo dia estava eu navegando no GitHub de uma referência em Java o [Rafa Bene](https://github.com/rafabene), e me deparei com um repositório chamado [dotfiles](https://github.com/rafabene/dotfiles).
 
-O nome me chamou atenção e ao navegar neste repositório, o Rafa, linka um post do seu [blog](http://rafabene.com/2015/10/06/do-you-dotfiles/) em que detalha como foi feita a organização dos seus "dotfiles".
+O nome me chamou atenção e ao navegar neste repositório, o Rafa, linkou um post do seu [blog](http://rafabene.com/2015/10/06/do-you-dotfiles/) em que detalha como foi feita a organização dos seus "dotfiles".
 
-Nesse mesmo post ele também faz um link para um [site/repositório](https://dotfiles.github.io/) no GitHub que contém um guia não oficial para organização de dotfiles.
+Nesse mesmo post ele fez um link para um [site/repositório](https://dotfiles.github.io/) no GitHub que contém um guia não oficial para organização de dotfiles.
 
 Bom, me vi diante de um mundo, detalhado e organizado, sobre dotfiles, até então desconhecido para mim.
 
