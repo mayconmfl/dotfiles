@@ -6,20 +6,23 @@
 #
 
 ### Variables
-dir_dotfiles=~/dev/mysdk/projects/dotfiles
-tmp_dotfiles_old_dir=~/dev/tmp/tmp_dotfiles
+dir_dotfiles=$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)
+tmp_dotfiles_old_dir=~/.tmp_dotfiles_old_dir
 dotfiles="zshrc macos"
 ### 
 
 echo "Starting the installation process of dotfiles..."
 echo 
 
+echo "	Your dotfiles repo is located in $dir_dotfiles"
+
+echo
 
 echo "	Steps:"
 
 # 1 - Make backup from existing dotfiles
 [ -d $tmp_dotfiles_old_dir ] && rm -rf $tmp_dotfiles_old_dir
-echo "	1 - Creating for backup of any existing dotfiles/symlink in $tmp_dotfiles_old_dir"
+echo "	1 - Creating backup of any existing dotfiles/symlink in $tmp_dotfiles_old_dir"
 mkdir -p $tmp_dotfiles_old_dir
 echo 
 
