@@ -1,4 +1,4 @@
-# The World of Dotfiles
+# Maycon's Dotfiles
 
 ![Screenshot of my iterm2 prompt](https://i.imgur.com/gllHjxF.png)
 
