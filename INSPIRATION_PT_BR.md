@@ -49,7 +49,7 @@ Então resolvi iniciar a organização do meu repositório de forma bem simples 
 
 4. http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 
-   > Esse artigo dá uma panorama geral sobre como utilizar o git (branchs, commits etc) para gerenciar os dotfiles, dando dicas de como organizar as pastas internamente do repositório de dotfiles, construção do script de instalação 
+   > Esse artigo dá uma panorama geral sobre como utilizar o git (branchs, commits etc) para gerenciar os dotfiles, dando dicas de como organizar as pastas internamente do repositório de dotfiles, construção do script de instalação.
    >
    > Dotfile repo: https://github.com/michaeljsmalley/dotfiles
    
@@ -57,7 +57,7 @@ Então resolvi iniciar a organização do meu repositório de forma bem simples 
    
 5. https://www.atlassian.com/git/tutorials/dotfiles
 
-   > Esse artigo dá uma panorama geral sobre como utilizar o git para gerenciar os dotfile 
+   > Esse artigo dá uma panorama geral sobre como utilizar o git para gerenciar os dotfile.
    >
    > Dotfile repo: https://www.atlassian.com/git/tutorials/dotfiles
 
@@ -99,9 +99,3 @@ Então resolvi iniciar a organização do meu repositório de forma bem simples 
     1. [https://github.com/ryanb/dotfiles](https://github.com/ryanb/dotfiles)
     2. [https://github.com/holman/dotfiles](https://github.com/holman/dotfiles)
     3. [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
-
-
-
-
-
-
