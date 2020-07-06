@@ -37,7 +37,7 @@ git clone https://github.com/mayconmfl/dotfiles.git && cd dotfiles/bin && zsh in
 
 ## Feedback
 
-Suggestions/improvements [welcome](https://github.com/mathiasbynens/dotfiles/issues)!
+Suggestions/improvements [welcome](https://github.com/mayconmfl/dotfiles/issues)!
 
 
 
