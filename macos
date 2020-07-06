@@ -1,0 +1,84 @@
+# macOS Configurations
+# Author: Maycon Lima <maycon.mflima@gmail.com>
+# Date: Jul-2020
+#
+#==============================================================================
+
+###############################################################################
+# General                                                                     #
+###############################################################################
+
+# Sublime: Define as the default text editor
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure \ LSHandlers -array-add \ '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+#
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+# Screenshots: Save to the custom folder 
+[ ! -d "${HOME}/Pictures/Screenshots" ] && mkdir ${HOME}/Pictures/Screenshots
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
+#
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+#
+
+# Finder: show hidden files by default
+#defaults write com.apple.finder AppleShowAllFiles -bool true
+#
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+#
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+#
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+#
+
+# Finder: Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+#
+
+# Finder: Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+#
+
+# Finder: Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+#
+
+# Restart Finder to get changes
+killall Finder
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+
+# Dock: Change delay to show dock
+defaults write com.apple.dock autohide-delay -float 0
+#
+
+# Dock: Show dock without animation moviment
+defaults write com.apple.dock autohide-time-modifier -float 0
+#
+
+# Dock: Show fade effect on hidden apps
+defaults write com.apple.dock showhidden -bool true
+#
+
+# Restart Dock to get changes
+killall Dock
+
+#==============================================================================
