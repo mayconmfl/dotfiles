@@ -2,7 +2,7 @@
 
 
 
-Certo dia estava eu navegando no GitHub de uma referência em Java o, [Rafa Bene](https://github.com/rafabene) e me deparei com um repositório chamado [dotfiles](https://github.com/rafabene/dotfiles).
+Certo dia estava eu navegando no GitHub de uma referência em Java o [Rafa Bene](https://github.com/rafabene), e me deparei com um repositório chamado [dotfiles](https://github.com/rafabene/dotfiles).
 
 O nome me chamou atenção e ao navegar neste repositório, o Rafa, linka um post do seu blog em que detalha como foi feita a organização dos seus "dotfiles".
 
