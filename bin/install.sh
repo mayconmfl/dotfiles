@@ -8,7 +8,7 @@
 ### Variables
 dir_dotfiles=$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)
 tmp_dotfiles_old_dir=~/.tmp_dotfiles_old_dir
-dotfiles="zshrc macos"
+declare -a dotfiles=("zshrc" "macos")
 ### 
 
 echo "Starting the installation process of dotfiles..."
