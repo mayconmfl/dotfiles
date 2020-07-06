@@ -8,7 +8,7 @@ O nome me chamou atenção e ao navegar neste repositório, o Rafa, linka um pos
 
 Nesse mesmo post ele também faz um link para um [site/repositório](https://dotfiles.github.io/) no GitHub que contém um guia não oficial para organização de dotfiles.
 
-Bom, que me vi diante de um mundo, detalhado e organizado, sobre dotfiles, até então desconhecido para mim.
+Bom, me vi diante de um mundo, detalhado e organizado, sobre dotfiles, até então desconhecido para mim.
 
 Passei alguns dias lendo muitos artigos (vários de muitos anos atrás, como que só descobrir que existia essa organização toda agora?! :O) e mais um bocado navegando pelos repositórios da comunidade e mais um outro bocado testando ferramentas para essa finalidade.
 
