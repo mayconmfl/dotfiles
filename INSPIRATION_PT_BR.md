@@ -93,7 +93,7 @@ Então resolvi iniciar a organização do meu repositório de forma bem simples 
 
 ## Dicas Extras
 
-1. Usar um repositório local privado para fazer o override das configs, para vc consegui armazenar por atalhos SSH 
+1. Usar um repositório local privado para fazer o override das configs, para vc consegui armazenar por atalhos internos e dados privados 
 2. Usar branchs para separar arquivos de ambientes diferentes em um repositório local
 3. Repositórios de exemplos extras de dotfiles
     1. [https://github.com/ryanb/dotfiles](https://github.com/ryanb/dotfiles)
