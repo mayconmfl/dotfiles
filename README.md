@@ -29,6 +29,7 @@ git clone https://github.com/mayconmfl/dotfiles.git && cd dotfiles/bin && zsh in
 
 ## Next steps
 
+- Add gitconfig on Dotfiles
 - Improve `install.sh` to automatic download _oh-my-zsh_ framework and _zinit manager plugins_. 
 - Create a `Brewfile` to homebrew take care of the installation of the main programs
 
