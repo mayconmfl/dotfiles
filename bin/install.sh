@@ -13,11 +13,8 @@ dotfiles="zshrc macos"
 
 echo "Starting the installation process of dotfiles..."
 echo 
-
 echo "	Your dotfiles repo is located in $dir_dotfiles"
-
 echo
-
 echo "	Steps:"
 
 # 1 - Make backup from existing dotfiles
@@ -35,7 +32,6 @@ for file in $dotfiles; do
 		mv ~/.$file $tmp_dotfiles_old_dir/.$file
 	fi
 done
-
 echo  
 
 # 2 - Create files symlinks
@@ -45,19 +41,16 @@ for file in $dotfiles; do
 	echo "	Creating symlink of file '$file' to -> $HOME/.$file"
 	ln -sfn $dir_dotfiles/$file $HOME/.$file
 done
-
 echo
 
+# 3 - Delete tmp dir
 echo "	3 - Deleting $tmp_dotfiles_old_dir ..."
 rm -rf $tmp_dotfiles_old_dir
-
 echo
 
-
-echo "	4 - Source macos defaults configs "
+# 4 - Source macos settings
+echo "	4 - Source macos settings"
 source $HOME/.macos
-
 echo
 
 echo "We already done here, enjoy your dotfiles! bye =]"
-
