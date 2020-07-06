@@ -66,7 +66,7 @@ So, i decided init my own repository like a mvp.
 
 
 
-## Arquivos
+## Files
 
 1. File example with macOS preferences
 
@@ -92,7 +92,7 @@ So, i decided init my own repository like a mvp.
 
    
 
-## Dicas Extras
+## Extra Tips
 
 1. Use a local private repository to override the configs, so you can store them via internal shortcuts and private data
 2. Use branchs to separate files from different environments in a local repository
