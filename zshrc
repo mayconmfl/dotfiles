@@ -112,12 +112,16 @@ zinit light zdharma/fast-syntax-highlighting
 
 # Env
 export LANG=en_US.UTF-8
-
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Alias
 
 # Local
 alias home=~
+alias mysdk=~/Dev/mysdk
+alias jobsdk=~/Dev/jobsdk
+alias studysdk=~/Dev/studysdk
+alias labsdk=~/Dev/labsdk
 alias dev=~/Dev/
 alias tmp=~/Dev/Tmp
 
@@ -133,5 +137,10 @@ alias du='du -h -d 2'
 
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+
+# Put any proprietary or private functions/values in ~/.private, and this will source them
+if [ -f $HOME/.private ]; then
+  source $HOME/.private
+fi
 
 #============================================================================
