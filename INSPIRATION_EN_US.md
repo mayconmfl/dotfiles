@@ -58,7 +58,7 @@ So, i decided init my own repository like a mvp.
 
    > This article gives an overview on how use git to manage your dotfiles.
    >
-   > Dotfile repo: https://www.atlassian.com/git/tutorials/dotfiles
+   > Dotfile repo: https://bitbucket.org/durdn/cfg/src/master/
 
 
 
