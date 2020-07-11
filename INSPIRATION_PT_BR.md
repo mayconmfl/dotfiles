@@ -59,7 +59,7 @@ Então resolvi iniciar a organização do meu repositório de forma bem simples 
 
    > Esse artigo dá uma panorama geral sobre como utilizar o git para gerenciar os dotfile.
    >
-   > Dotfile repo: https://www.atlassian.com/git/tutorials/dotfiles
+   > Dotfile repo: https://bitbucket.org/durdn/cfg/src/master/
 
 
 
