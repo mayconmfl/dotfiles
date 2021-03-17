@@ -112,7 +112,9 @@ zinit light zdharma/fast-syntax-highlighting
 
 # Env
 export LANG=en_US.UTF-8
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_281`
+export GRADLE_HOME=/Users/mayconmfl/Dev/Supportsdk/Libs/gradle/current
+export PATH=$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 
 # Alias
 
