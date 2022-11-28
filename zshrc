@@ -1,6 +1,6 @@
 # zshrc Configurations
 # Author: Maycon Lima <maycon.mflima@gmail.com>
-# Date: Jul-2020
+# Date: Nov-2022
 #
 #============================================================================
 
@@ -90,15 +90,19 @@ source $ZSH/oh-my-zsh.sh
 
 # >>>>>> ZINIT Plugin Manager <<<<<<<
 
-### Added by Zplugin's installer
-##source "$HOME/.zplugin/bin/zplugin.zsh"
-##autoload -Uz _zplugin
-##(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
-source "$HOME/.zinit/bin/zinit.zsh"
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit installer's chunk
+### End of Zinit's installer chunk
 
 # ZPLUGINS's
 zinit light chrissicool/zsh-bash
@@ -113,7 +117,7 @@ zinit light zdharma/fast-syntax-highlighting
 # Env
 export LANG=en_US.UTF-8
 #export JAVA_HOME=`/usr/libexec/java_home -v jdk1.8.0_301`
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_351.jdk/Contents/Home/
 export GRADLE_HOME=/Users/mayconmfl/dev/support/libs/gradle/current
 export MAVEN_HOME=/Users/mayconmfl/dev/support/libs/maven/current
 export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
