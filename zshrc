@@ -1,10 +1,10 @@
 # zshrc Configurations
 # Author: Maycon Lima <maycon.mflima@gmail.com>
-# Date: Nov-2022
+# Date: Apr-2023
 #
 #============================================================================
 
-# >>>>>> OH-MY-ZSH Framework (managing zsh configuration) <<<<<<<
+#### >>>>>> OH-MY-ZSH Framework (managing zsh configuration) <<<<<<<
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 
 #============================================================================
 
-# >>>>>> ZINIT Plugin Manager <<<<<<<
+#### >>>>>> ZINIT Plugin Manager <<<<<<<
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -112,24 +112,23 @@ zinit light zdharma/fast-syntax-highlighting
 
 #============================================================================
 
-# >>>>>> User Configuration <<<<<<<
+####  >>>>>> User Configuration <<<<<<<
 
-# Env
+## Env
 export LANG=en_US.UTF-8
-#export JAVA_HOME=`/usr/libexec/java_home -v jdk1.8.0_301`
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_351.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/
 export GRADLE_HOME=/Users/mayconmfl/dev/support/libs/gradle/current
 export MAVEN_HOME=/Users/mayconmfl/dev/support/libs/maven/current
 export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 
-# Alias
+## Alias
 
-# Local
+## Local
 alias home=~
 alias dev=~/dev/
 alias tmp=~/dev/tmp
-
 alias cls='clear'
+alias mvnjdk8="JAVA_HOME"="/Users/mayconmfl/dev/support/jdk/x86/oracle-jdk-1.8.0_351.jdk/Contents/Home && /Users/mayconmfl/dev/support/libs/maven/apache-maven-3.9.1/bin/mvn"
 
 # PS
 alias psa="ps aux"
@@ -138,6 +137,7 @@ alias psg="ps aux | grep "
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h -d 2'
+alias lsp="ls -l | awk   '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
