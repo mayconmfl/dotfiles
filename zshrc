@@ -124,6 +124,7 @@ export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 ## Alias
 
 ## Local
+alias scz='source ~/.zshrc'
 alias home=~
 alias dev=~/dev/
 alias tmp=~/dev/tmp
@@ -134,10 +135,14 @@ alias mvnjdk8="JAVA_HOME"="/Users/mayconmfl/dev/support/jdk/x86/oracle-jdk-1.8.0
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
-# Show human friendly numbers and colors
+# Show human friendly
+alias ls='ls -F'
 alias df='df -h'
 alias du='du -h -d 2'
 alias lsp="ls -l | awk   '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
+alias gh='history|grep' #Find a command in your grep history
+alias left='ls -t -1' #Sort by modification time
+alias count='find . -type f | wc -l' #Count files
 
 # Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
