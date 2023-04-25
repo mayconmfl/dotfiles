@@ -1,8 +1,8 @@
 # zshrc Configurations
 # Author: Maycon Lima <maycon.mflima@gmail.com>
 # Date: Apr-2023
-#
-#============================================================================
+
+#========================================================================================================================================================
 
 #### >>>>>> OH-MY-ZSH Framework (managing zsh configuration) <<<<<<<
 
@@ -86,7 +86,7 @@ setopt HIST_IGNORE_DUPS
 
 source $ZSH/oh-my-zsh.sh
 
-#============================================================================
+#========================================================================================================================================================
 
 #### >>>>>> ZINIT Plugin Manager <<<<<<<
 
@@ -110,33 +110,45 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zdharma/fast-syntax-highlighting
 
-#============================================================================
+#========================================================================================================================================================
 
-####  >>>>>> User Configuration <<<<<<<
+#### >>>>>> User Configuration <<<<<<<
 
-## Env
+#
+#
+#
+
+### EXPORT
+
+# Env
 export LANG=en_US.UTF-8
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/
 export GRADLE_HOME=/Users/mayconmfl/dev/support/libs/gradle/current
 export MAVEN_HOME=/Users/mayconmfl/dev/support/libs/maven/current
 export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 
-## Alias
+### END - EXPORT
+
+#
+#
+#
+
+### ALIAS
 
 ## Local
-alias scz='source ~/.zshrc'
+alias aliasf='show_aliases_with_comments' #Show aliases names with comments
+alias scz='source ~/.zshrc' #Source zshrc file
 alias home=~
 alias dev=~/dev/
 alias tmp=~/dev/tmp
 alias cls='clear'
 alias mvnjdk8="JAVA_HOME"="/Users/mayconmfl/dev/support/jdk/x86/oracle-jdk-1.8.0_351.jdk/Contents/Home && /Users/mayconmfl/dev/support/libs/maven/apache-maven-3.9.1/bin/mvn"
+alias gcc='~/.scripts/git-config-credentials.sh'
 
-# PS
+## PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
-# Show human friendly
-alias ls='ls -F'
+## Show human friendlyca
 alias df='df -h'
 alias du='du -h -d 2'
 alias lsp="ls -l | awk   '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
@@ -144,12 +156,45 @@ alias gh='history|grep' #Find a command in your grep history
 alias left='ls -t -1' #Sort by modification time
 alias count='find . -type f | wc -l' #Count files
 
-# Homebrew
+## Homebrew
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+
+### END - ALIAS
+
+#
+#
+#
+
+### FUNCTIONS
+
+function show_aliases_with_comments() {
+  local PRIVATE_FILE="$HOME/.zshrc"
+
+  while read -r line; do
+    if [[ $line == alias* ]]; then
+      name=$(echo "$line" | sed -n 's/^alias \([^=]*\)=.*/\1/p')
+      comment=$(echo "$line" | sed -n 's/^.*#//p')
+
+      if [[ -n "$comment" ]]; then
+        echo "[$name] - $comment"
+      else
+        echo "[$name]"
+      fi
+    fi
+  done < "$PRIVATE_FILE"
+}
+
+### END - FUNCTIONS
+
+#
+#
+#
+
+### PRIVATE
 
 # Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then
   source $HOME/.private
 fi
 
-#============================================================================
+### END - PRIVATE
