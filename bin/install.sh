@@ -2,8 +2,7 @@
 
 # Install Dotfiles Shell Script
 # Author: Maycon Lima <maycon.mflima@gmail.com>
-# Date: Jul-2020
-#
+# Date: Apr-2023
 
 ### Variables
 dir_dotfiles=$(cd "$(dirname "${BASH_SOURCE[0]}")" && cd .. && pwd)
@@ -53,4 +52,26 @@ echo "	4 - Source macos settings"
 source $HOME/.macos
 echo
 
+# 5 - Move scripts
+echo "	5 - Copying scripts"
+
+if [ ! -d "$HOME"/.scripts ]
+then
+  mkdir -p "$HOME"/.scripts
+fi
+
+if [ -d "$HOME"/.scripts ]
+then
+  rm -r "$HOME"/.scripts 
+  mkdir -p "$HOME"/.scripts
+fi
+
+find "$dir_dotfiles"/scripts -type f -name "*.sh" -print0 | while IFS= read -r -d '' file; do
+
+	filename=$(basename "$file")
+    echo "	file:$filename"
+	cp "$file" "$HOME"/.scripts/
+done
+
+echo 
 echo "We already done here, enjoy your dotfiles! bye =]"
