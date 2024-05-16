@@ -125,6 +125,11 @@ export LANG=en_US.UTF-8
 export GRADLE_HOME=/Users/mayconmfl/dev/support/libs/gradle/current
 export MAVEN_HOME=/Users/mayconmfl/dev/support/libs/maven/current
 export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ### END - EXPORT
 
@@ -132,23 +137,61 @@ export PATH=$MAVEN_HOME/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$PATH
 #
 #
 
+### FUNCTIONS
+
+function show_aliases_with_comments() {
+  local RC_FILE="$HOME/.zshrc"
+  local cont=1
+
+  while read -r line; do
+    if [[ $line == alias* ]]; then
+      name=$(echo "$line" | sed -n 's/^alias \([^=]*\)=.*/\1/p')
+      comment=$(echo "$line" | sed -n 's/^.*#//p')
+
+      if [[ -n "$comment" ]]; then
+        echo "[$cont] - [$name] - $comment"
+      else
+        echo "[$cont] - [$name]"
+      fi
+
+      (( cont++ ))
+    fi
+  done < "$RC_FILE"
+}
+
+### END - FUNCTIONS
+
+#
+#
+#
+
 ### ALIAS
 
-## Local
+## Helpers
 alias aliasf='show_aliases_with_comments' #Show aliases names with comments
+alias open_rc='open ~/.zshrc' #Open ZSHRc file do edit
+alias open_private='open ~/.private' #Open private file do edit
 alias scz='source ~/.zshrc' #Source zshrc file
+alias cls='clear'
+
+## Paths
 alias home=~
 alias dev=~/dev/
 alias tmp=~/dev/tmp
-alias cls='clear'
 alias mvnjdk8="JAVA_HOME"="/Users/mayconmfl/dev/support/jdk/x86/oracle-jdk-1.8.0_351.jdk/Contents/Home && /Users/mayconmfl/dev/support/libs/maven/apache-maven-3.9.1/bin/mvn"
-alias gcc='~/.scripts/git-config-credentials.sh'
+
+## Dev
+alias gcc='~/.scripts/git-config-credentials.sh' #Script to config git credentials given a folder
+alias awslocal='/Users/mayconmfl/Library/Python/3.9/bin/awslocal' #
+alias kse='java -jar /Users/mayconmfl/dev/support/tools/kse-552/kse.jar > /dev/null 2>&1 &'
+alias pg_restore='/Applications/Postgres.app/Contents/Versions/15/bin/pg_restore' #Postgress pg_restore utility
 
 ## PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
-## Show human friendlyca
+## Show human friendly
+alias ls='ls -la'
 alias df='df -h'
 alias du='du -h -d 2'
 alias lsp="ls -l | awk   '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
@@ -165,30 +208,6 @@ alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
 #
 #
 
-### FUNCTIONS
-
-function show_aliases_with_comments() {
-  local PRIVATE_FILE="$HOME/.zshrc"
-
-  while read -r line; do
-    if [[ $line == alias* ]]; then
-      name=$(echo "$line" | sed -n 's/^alias \([^=]*\)=.*/\1/p')
-      comment=$(echo "$line" | sed -n 's/^.*#//p')
-
-      if [[ -n "$comment" ]]; then
-        echo "[$name] - $comment"
-      else
-        echo "[$name]"
-      fi
-    fi
-  done < "$PRIVATE_FILE"
-}
-
-### END - FUNCTIONS
-
-#
-#
-#
 
 ### PRIVATE
 
